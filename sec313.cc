@@ -26,8 +26,28 @@ int main(int argc, char *argv[])
 	//	else
 	//		std::cout << vec[i] << " + " << vec[i+1] << " = " << vec[i] + vec[i+1] << std::endl;
 	//}
-
-
+	
+	bool isEven = ((size % 2) == 0);
+	if(isEven)
+	{
+		vector_size i, j;
+		for(i=0, j=size-1; (i+1) != j; i++, j--)
+		{
+			std::cout << vec[i] << " + " << vec[j] << " = " << vec[i] + vec[j]
+				<< std::endl;
+		}
+		std::cout << vec[i] << " + " << vec[j] << " = " << vec[i] + vec[j]
+			<< std::endl;
+	}
+	else
+	{
+		for(vector_size i=0, j=size-1; i!=j; i++, j--)
+		{
+			std::cout << vec[i] << " + " << vec[j] << " = " << vec[i] + vec[j]
+				<< std::endl;
+		}
+		std::cout << "lonely one: " << vec[size / 2] << std::endl;
+	}
 
 	return 0;
 }
